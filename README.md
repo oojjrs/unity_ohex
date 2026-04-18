@@ -1,10 +1,10 @@
 # Unity Ohex
 
-Unity?먯꽌 ?↔컖??醫뚰몴? ?붾뱶 醫뚰몴瑜??ㅻ（湲??꾪븳 ?⑦궎吏?낅땲??
+Unity에서 육각형 격자 좌표를 다루기 위한 패키지입니다.
 
-## ?ㅼ튂
+## 설치
 
-`Packages/manifest.json`??`dependencies`???ㅼ쓬 ??ぉ??異붽??⑸땲??
+`Packages/manifest.json`의 `dependencies`에 다음 항목을 추가합니다.
 
 ```json
 {
@@ -14,14 +14,16 @@ Unity?먯꽌 ?↔컖??醫뚰몴? ?붾뱶 醫뚰몴瑜??ㅻ（湲??꾪븳 ?⑦�
 }
 ```
 
-?⑦궎吏 留ㅻ땲???`Add package from git URL...`??媛숈? 二쇱냼瑜??ｌ뼱 ?ㅼ튂?대룄 ?⑸땲??
+또는 Unity Package Manager의 `Add package from git URL...`에 같은 주소를 넣어 설치할 수 있습니다.
 
-## ?ы븿 ?댁슜
+## 제공 기능
 
-- `Hex` 援ъ“泥대줈 異?醫뚰몴(`Q`, `R`, `S`) ?쒗쁽
-- Pointy Topped, Flat Topped ?뺥깭 吏??- ?붾뱶 醫뚰몴? ?↔컖 醫뚰몴 蹂??- ?댁썐 ??? ?媛곸꽑 ??? 醫뚰몴 蹂???좏떥由ы떚 ?쒓났
+- `Hex` 구조체 기반 축 좌표(`Q`, `R`, `S`) 표현
+- Pointy Topped, Flat Topped 형태 지원
+- 월드 좌표와 육각 좌표 간 변환
+- 이웃 타일, 대각선 타일, 오프셋 좌표 변환 유틸리티 제공
 
-## ?ъ슜 ?덉떆
+## 사용 예시
 
 ```csharp
 using UnityEngine;
@@ -39,9 +41,9 @@ public class HexExample : MonoBehaviour
 }
 ```
 
-## ?⑦궎吏 援ъ“
+## 패키지 구조
 
-?ㅼ젣 Unity ?⑦궎吏 猷⑦듃??`Packages/src`?낅땲??
+실제 Unity 패키지 루트는 `Packages/src`입니다.
 
-- [?⑦궎吏 臾몄꽌](./Packages/src/README.md)
-- [?⑦궎吏 硫뷀??곗씠??(./Packages/src/package.json)
+- [패키지 문서](./Packages/src/README.md)
+- [패키지 메타데이터](./Packages/src/package.json)

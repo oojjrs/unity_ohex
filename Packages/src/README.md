@@ -1,13 +1,16 @@
 # com.oojjrs.ohex
 
-`com.oojjrs.ohex`??Unity???↔컖??醫뚰몴 ?좏떥由ы떚 ?⑦궎吏?낅땲??
+`com.oojjrs.ohex`는 Unity용 육각형 좌표 유틸리티 패키지입니다.
 
-## 二쇱슂 湲곕뒫
+## 주요 기능
 
-- `Hex` 援ъ“泥?湲곕컲 異?醫뚰몴 ?쒗쁽
-- Pointy Topped, Flat Topped ?↔컖??吏??- `Vector2`, `Vector3` 湲곗? 醫뚰몴 蹂??- ?댁썐 ??쇨낵 ?媛곸꽑 ????닿굅
-- Offset 醫뚰몴 蹂??吏??
-## 湲곕낯 ?ъ슜
+- `Hex` 구조체 기반 축 좌표 표현
+- Pointy Topped, Flat Topped 육각형 지원
+- `Vector2`, `Vector3` 기준 좌표 변환
+- 이웃 타일과 대각선 타일 열거
+- Offset 좌표 변환 지원
+
+## 기본 사용
 
 ```csharp
 using UnityEngine;
@@ -28,13 +31,14 @@ public class HexSample : MonoBehaviour
 }
 ```
 
-## 醫뚰몴 蹂??
-- `ToWorld2D()`??`Vector2` ?붾뱶 醫뚰몴瑜?諛섑솚?⑸땲??
-- `ToWorld3D(float y = 0)`??Unity `XZ` ?됰㈃ 湲곗? `Vector3`瑜?諛섑솚?⑸땲??
-- `new Hex(Vector2 point, float size, Hex.FormEnum form)`?쇰줈 ?붾뱶 醫뚰몴?먯꽌 ?↔컖 醫뚰몴瑜?怨꾩궛?????덉뒿?덈떎.
-- `AsDoubleOffsetCoordinate`, `AsEvenOffsetCoordinate`, `AsOddOffsetCoordinate`濡??ㅽ봽??醫뚰몴瑜??살쓣 ???덉뒿?덈떎.
+## 좌표 변환
 
-## ?ㅼ튂 二쇱냼
+- `ToWorld2D()`는 `Vector2` 월드 좌표를 반환합니다.
+- `ToWorld3D(float y = 0)`는 Unity `XZ` 평면 기준 `Vector3`를 반환합니다.
+- `new Hex(Vector2 point, float size, Hex.FormEnum form)`으로 월드 좌표에서 육각 좌표를 계산할 수 있습니다.
+- `AsDoubleOffsetCoordinate`, `AsEvenOffsetCoordinate`, `AsOddOffsetCoordinate`로 오프셋 좌표를 얻을 수 있습니다.
+
+## 설치 주소
 
 ```text
 https://github.com/oojjrs/unity_ohex.git?path=/Packages/src#1.1.0
