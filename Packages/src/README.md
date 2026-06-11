@@ -41,5 +41,5 @@ public class HexSample : MonoBehaviour
 ## 설치 주소
 
 ```text
-https://github.com/oojjrs/unity_ohex.git?path=/Packages/src#1.1.0
+https://github.com/oojjrs/unity_ohex.git?path=/Packages/src#1.2.0
 ```

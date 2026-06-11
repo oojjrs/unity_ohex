@@ -108,13 +108,13 @@ public partial struct Hex
     {
         var deg = Logic.GetCornerAngleAsDegree(index);
         var rad = deg * Mathf.Deg2Rad;
-        return new Vector2(Q + Size * Mathf.Cos(rad), R + Size * Mathf.Sin(rad));
+        var center = ToWorld2D();
+        return new Vector2(center.x + Size * Mathf.Cos(rad), center.y + Size * Mathf.Sin(rad));
     }
 
     public bool IsIn(Hex hex, int distance)
     {
-        var v = this - hex;
-        return Mathf.Abs(v.Item1 + v.Item2) <= distance;
+        return GetDistance(this, hex) <= distance;
     }
 
     public Vector2 ToWorld2D()

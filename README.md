@@ -9,7 +9,7 @@ Unity에서 육각형 격자 좌표를 다루기 위한 패키지입니다.
 ```json
 {
   "dependencies": {
-    "com.oojjrs.ohex": "https://github.com/oojjrs/unity_ohex.git?path=/Packages/src#1.1.0"
+    "com.oojjrs.ohex": "https://github.com/oojjrs/unity_ohex.git?path=/Packages/src#1.2.0"
   }
 }
 ```

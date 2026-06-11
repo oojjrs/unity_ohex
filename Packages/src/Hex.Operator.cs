@@ -30,10 +30,13 @@ public partial struct Hex
     public static IEnumerable<Hex> GetBetween(Hex lhs, Hex rhs)
     {
         var n = GetDistance(lhs, rhs);
+        if (n == 0)
+            return Enumerable.Repeat(lhs, 1);
+
         return Enumerable.Range(0, n + 1).Select(i =>
         {
             // Epsilon을 더해주어 경계선에 정확히 떨어지는 값들을 방지할 수 있다고 하는군.
-            var v = Round(Vector2.Lerp((Vector2)lhs, (Vector2)rhs + new Vector2(float.Epsilon, float.Epsilon), 1f / n * i));
+            var v = Round(Vector2.Lerp((Vector2)lhs, (Vector2)rhs + new Vector2(1e-6f, 1e-6f), i / (float)n));
             return new Hex(v.x, v.y, lhs.Size, lhs.Form);
         });
     }
@@ -52,7 +55,7 @@ public partial struct Hex
                 for (int r = Math.Max(-maxDistance, -q - maxDistance); r <= Math.Min(maxDistance, -q + maxDistance); ++r)
                 {
                     var v = new Vector2Int(q, r);
-                    if (Vector2Int.Distance(Vector2Int.zero, v) >= minDistance)
+                    if ((Math.Abs(q) + Math.Abs(r) + Math.Abs(-q - r)) / 2 >= minDistance)
                         yield return center + v;
                 }
             }
@@ -62,13 +65,13 @@ public partial struct Hex
     // 통상적인 방향과 반대다. z좌표가 반대니까.
     public static Hex RotateLeft(Hex hex)
     {
-        return new(-hex.R, -hex.S);
+        return new(-hex.R, -hex.S, hex.Size, hex.Form);
     }
 
     // 통상적인 방향과 반대다. z좌표가 반대니까.
     public static Hex RotateRight(Hex hex)
     {
-        return new(-hex.S, -hex.Q);
+        return new(-hex.S, -hex.Q, hex.Size, hex.Form);
     }
 
     private static Vector2Int Round(Vector2 v)
